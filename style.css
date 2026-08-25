@@ -5,15 +5,18 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   padding: 20px;
   background-color: #f4f4f9;
+  color: #333333;
 }
 
 .feed {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Requisitos do exercício */
@@ -26,8 +29,8 @@ article {
   border-radius: 8px;
   padding: 16px;
   gap: 20px;
-  align-items: center;  /* Alinhamento padrão dos itens no centro */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;  /* Alinhamento padrão no centro */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .post-img {
@@ -35,10 +38,21 @@ article {
   height: 150px;
   object-fit: cover;
   border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .post-content {
   flex: 1;
+}
+
+.post-content h2 {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.post-content p {
+  line-height: 1.5;
+  color: #555555;
 }
 
 /* Alinhamento customizado em um elemento interno */
@@ -49,9 +63,28 @@ article .post-btn {
   color: #ffffff;
   border: none;
   border-radius: 4px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 article .post-btn:hover {
   background-color: #004999;
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 600px) {
+  article {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .post-img {
+    width: 100%;
+    height: 200px;
+  }
+
+  article .post-btn {
+    align-self: stretch;
+  }
 }
