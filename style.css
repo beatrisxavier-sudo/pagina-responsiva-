@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Requisitos do exercício */
+article {
+  display: flex;
+  flex-direction: row;  /* Conteúdo exibido em linha */
+  flex: 1 1 100%;        /* Ocupa 100% da largura da página */
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 20px;
+  align-items: center;  /* Alinhamento padrão dos itens no centro */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.post-content {
+  flex: 1;
+}
+
+/* Alinhamento customizado em um elemento interno */
+article .post-btn {
+  align-self: flex-end; /* Quebra o alinhamento centralizado e vai para a base */
+  padding: 10px 18px;
+  background-color: #0066cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+article .post-btn:hover {
+  background-color: #004999;
+}
